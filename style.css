@@ -1,0 +1,104 @@
+body {
+	margin: 0;
+}
+
+#main_container {
+	display: flex;
+	justify-content: center;
+	background-image: url(./images/do.jpg);
+	background-position: top center;
+	opacity: 80%;
+	font-family: "Times New Roman", Times, serif;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+#including {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.content, .newDiv {
+	font-size: 15px;
+	color: #0040ff;
+	width: 700px;
+	border: 2px solid #4d79ff;
+	border-radius: 5px;
+	padding: 10px 20px;
+	outline: none;
+}
+
+.content:hover {
+	box-shadow: 0 0 5px 1px #4d79ff;
+}
+
+.button {
+	font-size: 15px;
+	background-color: #4d79ff;
+	color: #ffffff; 
+	width: 120px;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	padding: 10px 20px;
+	outline: none;
+}
+
+.button:hover {
+	background-color: #002db3;
+}
+
+.button {
+	cursor: pointer;
+}
+.newDiv {
+	display: flex;
+	align-items: center;
+	background-color: #ccd9ff;
+	color: #1a53ff; 
+	border: 2px solid #ffffff;
+	width: 824px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.delSpan, .markSpan {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:  #ff0000;
+	color: #ffffff;
+	width: 47px;
+	height: 25px;
+	border: 2px solid #e60000;
+	border-radius: 5px;
+	position: absolute;
+	right: 5px;
+}
+
+.delSpan:hover {
+	background-color: #cc0000; 
+}
+
+.delSpan {
+	cursor: pointer;
+}
+
+.markSpan {
+	background-color: #1a53ff;
+	border: 2px solid #1a53ff;
+	right: 62px;
+}
+
+.markSpan:hover {
+	background-color: #002db3;
+}
+
+.markSpan {
+	cursor: pointer;
+}

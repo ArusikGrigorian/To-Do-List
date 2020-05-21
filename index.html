@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<title>To-Do List</title>
+</head>
+<body>
+	<div id="main_container">
+		<!--photo by Clark Tibbs-->
+		<div id="including">
+			<ol id="ol">
+				<li>
+					<form>
+						<input type="text" class="content" id="inpContent" name="to-do" value="Create a task" onfocus="this.value=''" onkeydown="createTitle()">
+						<button type="button" class="button" id="entButton" onclick="addDiv()">Add task</button>
+					</form>
+				</li>
+			</ol>
+		<div>
+	</div>
+<script type="text/javascript">
+	function createTitle(){
+		let title = document.getElementById("inpContent").value;
+			return title;
+	}
+
+	function addDiv(){
+		let divTitle = createTitle();
+		if(divTitle.length == 0 || divTitle.trim().length == 0) {
+			alert("Enter a valid text");
+		}
+		else {
+			let div = document.createElement("div");
+			div.innerHTML = divTitle;
+			div.className = "newDiv";
+			let delSpan = document.createElement("span");
+			delSpan.className = "delSpan";
+			delSpan.innerHTML = "Delete";
+			let markSpan = document.createElement("span");
+			markSpan.className = "markSpan";
+			markSpan.innerHTML = "Mark";
+			div.append(markSpan);
+			div.append(delSpan);
+			ol.append(div);
+
+			delSpan.onclick = function() {
+				div.remove();
+			}
+
+			markSpan.onclick = function() {
+				if(markSpan.innerHTML === "Mark") {
+					div.style.color = "#ffffff";
+					div.style.backgroundColor = "#4d79ff";
+					markSpan.innerHTML = "Done";
+					markSpan.style.backgroundColor = "#002db3";
+					markSpan.style.borderColor = "#001a66";
+					delSpan.style.borderColor = "#b30000"; 
+				}
+				else if(markSpan.innerHTML === "Done") {
+					div.style.color = "#1a53ff";
+					div.style.backgroundColor = "#ccd9ff";
+					markSpan.innerHTML = "Mark";
+					markSpan.style.backgroundColor = "#1a53ff";
+					markSpan.style.borderColor = "#1a53ff";
+					delSpan.style.borderColor = "#e60000"; 
+				}
+			}
+		}
+	}	
+</script>
+</body>
+</html>
+
+
