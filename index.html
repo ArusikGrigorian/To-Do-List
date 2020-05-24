@@ -21,14 +21,12 @@
 		<div>
 	</div>
 <script type="text/javascript">
-	function createTitle(){
-		let title = document.getElementById("inpContent").value;
-			return title;
-	}
 
 	function addDiv(){
-		let divTitle = createTitle();
-		if(divTitle.length == 0 || divTitle.trim().length == 0) {
+		
+		let inpt = document.getElementById("inpContent");
+		let divTitle = document.getElementById("inpContent").value;
+		if(!divTitle) {
 			alert("Enter a valid text");
 		}
 		else {
@@ -44,7 +42,7 @@
 			div.append(markSpan);
 			div.append(delSpan);
 			ol.append(div);
-			divTitle = "";
+			inpt.value = ";
 
 			delSpan.onclick = function() {
 				div.remove();
