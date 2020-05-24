@@ -30,6 +30,7 @@
 			alert("Enter a valid text");
 		}
 		else {
+			inpt.value=''";
 			let div = document.createElement("div");
 			div.innerHTML = divTitle;
 			div.className = "newDiv";
@@ -42,7 +43,6 @@
 			div.append(markSpan);
 			div.append(delSpan);
 			ol.append(div);
-			inpt.value = ";
 
 			delSpan.onclick = function() {
 				div.remove();
