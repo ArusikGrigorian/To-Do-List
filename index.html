@@ -12,7 +12,7 @@
 			<ol id="ol">
 				<li>
 					<form>
-						<input type="text" class="content" id="inpContent" name="to-do" value="Create a task" onfocus="this.value=''" onkeydown="createTitle()">
+						<input type="text" class="content" id="inpContent" placeholder="Create a task">
 						<button type="button" class="button" id="entButton" onclick="addDiv()">Add task</button>
 					</form>
 				</li>
@@ -20,17 +20,16 @@
 		<div>
 	</div>
 <script type="text/javascript">
-	function createTitle(){
-		let title = document.getElementById("inpContent").value;
-			return title;
-	}
 
 	function addDiv(){
-		let divTitle = createTitle();
-		if(divTitle.length == 0 || divTitle.trim().length == 0) {
+		
+		let inpt = document.getElementById("inpContent");
+		let divTitle = document.getElementById("inpContent").value;
+		if(!divTitle) {
 			alert("Enter a valid text");
 		}
 		else {
+			inpt.value= '';
 			let div = document.createElement("div");
 			div.innerHTML = divTitle;
 			div.className = "newDiv";
