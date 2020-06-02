@@ -16,6 +16,11 @@
 						<button type="button" class="button" id="entButton" onclick="addDiv()">Add task</button>
 					</form>
 				</li>
+				<li>
+					<form>
+						<input type="text" class="search" id="srchTask" placeholder="Search" oninput="showMatches()">
+					</form>
+				</li>
 			</ol>
 		<div>
 	</div>
@@ -51,14 +56,17 @@
 				if(markSpan.innerHTML === "Mark") {
 					div.style.color = "#ffffff";
 					div.style.backgroundColor = "#4d79ff";
+					div.style.borderColor = "#ffffff";
 					markSpan.innerHTML = "Done";
 					markSpan.style.backgroundColor = "#002db3";
-					markSpan.style.borderColor = "#001a66";
-					delSpan.style.borderColor = "#b30000"; 
+					markSpan.style.borderColor = "#001a66"; 
+					markSpan.classList.add("afterHover");
+					delSpan.style.borderColor = "#b30000";
 				}
 				else if(markSpan.innerHTML === "Done") {
 					div.style.color = "#1a53ff";
-					div.style.backgroundColor = "#ccd9ff";
+					div.style.backgroundColor = "#ffffff";
+					div.style.borderColor = "#4d79ff";
 					markSpan.innerHTML = "Mark";
 					markSpan.style.backgroundColor = "#1a53ff";
 					markSpan.style.borderColor = "#1a53ff";
@@ -67,8 +75,22 @@
 			}
 		}
 	}	
+
+
+	function showMatches() {
+
+		let srchVal = document.getElementById("srchTask").value;
+		let newDivs = Array.from(document.getElementsByClassName("newDiv"));
+		newDivs.forEach( div => {
+			if(div.textContent.split("MarkDelete").splice(0,1).toString().includes(srchVal)) {
+				div.classList.remove("visible");
+			}
+			else {
+				div.classList.add("visible");
+			}
+		});
+	}
+
 </script>
 </body>
 </html>
-
-

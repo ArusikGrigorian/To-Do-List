@@ -20,13 +20,29 @@ body {
 	padding: 20px;
 }
 
+#srchTask {
+	background-color: #002db3;
+	width: 824px;
+	margin-top: 10px;
+	font-size: 15px;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	padding: 10px 20px;
+	outline: none;
+}
+
 li {
     list-style-type: none;
 }
 
+#srchTask::placeholder { 
+  color: #ffffff;
+  opacity: 60%;
+}
+
 .content, .newDiv {
 	font-size: 15px;
-	color: #0040ff;
 	width: 700px;
 	border: 2px solid #4d79ff;
 	border-radius: 5px;
@@ -36,6 +52,11 @@ li {
 
 .content:hover {
 	box-shadow: 0 0 5px 1px #4d79ff;
+}
+
+.content::placeholder { 
+  color: #4d79ff;
+  opacity: 80%;
 }
 
 .button {
@@ -59,9 +80,9 @@ li {
 .newDiv {
 	display: flex;
 	align-items: center;
-	background-color: #ccd9ff;
+	background-color: #ffffff;
 	color: #1a53ff; 
-	border: 2px solid #ffffff;
+	border: 2px solid #4d79ff;
 	width: 824px;
 	margin-top: 10px;
 	position: relative;
@@ -81,10 +102,6 @@ li {
 	right: 5px;
 }
 
-.delSpan:hover {
-	background-color: #cc0000; 
-}
-
 .delSpan {
 	cursor: pointer;
 }
@@ -95,10 +112,18 @@ li {
 	right: 62px;
 }
 
-.markSpan:hover {
-	background-color: #002db3;
-}
-
 .markSpan {
 	cursor: pointer;
+}
+
+.afterHover {
+	background-color: yellow;
+}
+
+.afterAfterHover {
+	background-color: pink;
+}
+
+.visible {
+	display: none;
 }
