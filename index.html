@@ -18,7 +18,7 @@
 				</li>
 				<li>
 					<form>
-						<input type="text" class="search" id="srchTask" placeholder="Search" oninput="showMatches()">
+						<input type="text" class="search" id="srchTask" placeholder="Search" oninput="callingFunction()">
 					</form>
 				</li>
 			</ol>
@@ -77,12 +77,24 @@
 	}	
 
 
-	function showMatches() {
+	let delay = 1000;
+		
+	function callingFunction() {
 
+		callingFunction.time = Date.now();
+		let id = setTimeout(showMatches, delay)
+		if (Date.now() - callingFunction.time < 500) {
+  			delay *= 2;
+  		}
+  		id = setTimeout(showMatches, delay);
+	}
+
+	function showMatches() {
+ 		console.log("eli kanchecin")
 		let srchVal = document.getElementById("srchTask").value;
 		let newDivs = Array.from(document.getElementsByClassName("newDiv"));
 		newDivs.forEach( div => {
-			if(div.textContent.split("MarkDelete").splice(0,1).toString().includes(srchVal)) {
+			if (div.textContent.split("MarkDelete").splice(0,1).toString().includes(srchVal)) {
 				div.classList.remove("visible");
 			}
 			else {
